@@ -6,11 +6,36 @@
 
 using namespace std;
 // Constants, Structs, Classes
-
+class Serial
+{
+private:
+    int serialNumber;
+    static int count;
+public:
+    Serial(): serialNumber(count)
+    {count ++;}
+    void showSerial() //Sets/Shows serial number. Same input will show same serial
+    {
+        Serial x;
+        x.serialNumber = serialNumber;
+        cout << "Serial Number: " << x.serialNumber << endl;
+    }
+};
+int Serial::count = 1; // Set initial count
 // Prototypes
-
 // Main Program Program
-int main(void) {
+int main(void)
+{
+
+    Serial alpha, beta, charlie, delta;
+
+    alpha.showSerial();
+    beta.showSerial();
+    charlie.showSerial();
+    alpha.showSerial();
+    beta.showSerial();
+    delta.showSerial();
+
     return 0;
 }
 // Function Definitions
